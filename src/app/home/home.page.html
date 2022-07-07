@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+
+    <ion-icon size="large" name="accessibility-outline" slot="start"></ion-icon>
+    <ion-title>Asisten Imudh</ion-title>
+    <ion-text slot="end">Cavita Santi &nbsp; </ion-text>
+    <ion-avatar slot="end">
+      <img src="https://i.pinimg.com/236x/a5/a8/fd/a5a8fd0d18c44f02eb083f6e65260a85.jpg">
+
+
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cavta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+      <ion-card>
+      <ion-card-header>
+      <ion-card-subtitle>Form Presensi</ion-card-subtitle>
+      <ion-card-title>Presensi Asisten Mata Kuliah Hybrid Web Development</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      <h2>Diharapkan melakukan pengisian sesuai contoh di bawah ini  </h2>     
+      <ion-icon name="arrow-down-outline"></ion-icon> &nbsp;
+      <ion-icon name="arrow-down-outline"></ion-icon> &nbsp;
+      <ion-icon name="arrow-down-outline"></ion-icon> &nbsp;
+      <ion-icon name="arrow-down-outline"></ion-icon> &nbsp;
+      <ion-icon name="arrow-down-outline"></ion-icon>
+      <p><ion-text color="secondary">Data Presensi : </ion-text></p> <p> </p>
+      <p>Nama   : Azizah Giani </p>
+      <p>Nim    : 20.48.0321 </p>
+      <p>Dosen  : Nuri Cahyono, M.Kom </p>
+      <p>Hari   : Jumat, 4 Maret 2022 </p>
+      <p>Jam    : 16.40 - 17.40 </p>
+      <p>Kelas  : 21 S1AR 01 </p>
+      <p>
+        <ion-text color="primary"><i>====================================================================</i></ion-text> </p>
+ 
+      <p><ion-text color="secondary"> Bukti SS/Foto berupa : </ion-text></p>
+        <p>SS/Foto kegiatan belajar mengajar di kelas (Sinkronus : gmeet/zoom/ruangan lab) (Asinkronus : wa/classroom, dsb)
+        
+      </p>
+      <p> &nbsp; </p>
+      <p><ion-text color="secondary"> Syarat Bukti SS/Foto berupa : </ion-text></p>
+        <p>1. Foto selfie diruangan lab, jika SS pastikan waktu dan tanggal ada di layar SS</p>
+        <p>2. Submit bukti SS/Foto saat kelas berlangsung, max submit jam 23.59 WIB</p>
+        <p>3. Format name file : NIM (no akumulasi berapa kali mengasisten)
+    contoh : 19.84.0211(1); 19.84.0211(2); 19.84.0211(3); dst    </p>
+
+
+      </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+      <ion-card-content align="center">
+      <ion-item>
+        <ion-label position="floating" type="text">NIM</ion-label>
+        <ion-input [(ngModel)]="info.nim" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" type="text">Nama Lengkap</ion-label>
+        <ion-input [(ngModel)]="info.fullname" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Tanggal</ion-label>
+        <ion-datetime [showClearButton]="true" [(ngModel)]="info.date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Kelas</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox><ion-text slot="start"> 21 D3TI 01 </ion-text> 
+        <ion-checkbox slot="start"></ion-checkbox><ion-text>21 D3TI 02</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Dosen</ion-label>
+        <ion-radio slot="start"></ion-radio><ion-text slot="start"> Dwi Rahayu S.Kom M.Kom </ion-text> 
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Bukti SS/Foto *perhatikan penamaan file</ion-label>
+        <ion-button color="light" (click)="ChooseFile()" slot="end">Choose File</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Pertemuan/Minggu ke-<p><ion-text>Contoh : 1</ion-text></p></ion-label>
+        <ion-input [(ngModel)]="info.pr" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Keterangan<p><ion-text>Contoh : Asistensi diluar jam mengajar, Cadangan (menggantikan teman yang tidak bisa hadir)</ion-text></p></ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+        <ion-button color="success" (click)="saveData()" expand="block">Submit</ion-button>
+        <ion-button color="warning" (click)="scorePage()" expand="block">Score Apps</ion-button>
+      </ion-card-content>
+      </ion-card> 
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title align="center">Universitas Amikom Yogyakarta</ion-title>
+  </ion-toolbar>
+</ion-footer>
